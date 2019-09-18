@@ -9,7 +9,6 @@ module.exports = {
   "description": "C20/Monet-compatible templates that use  https://github.com/ff0000-ad-tech/ad-docs/blob/master/README.md",
   "type": "build_templates",
   "builder": {
-    "label": "970x250 NF Global Template",
     "tier": "endframe-resolve",
     "size": "970x250",
     "creative": "./dist/3-traffic/default/970x250",
@@ -25,7 +24,7 @@ module.exports = {
   },
   "context": "RED Interactive",
   "state": "published",
-  "updated": 1557970180125,
+  "updated": 1568768670428,
   "username": "GitHub",
   "full_name": "NetflixDev/bt-ER-970x250",
   "html_url": "https://github.com/NetflixDev/bt-ER-970x250",

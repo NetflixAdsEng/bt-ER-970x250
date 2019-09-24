@@ -11,9 +11,9 @@ const {
   rightPostMarkup
 } = createSideBySidePostMarkups({
   defaultArgs: {
-    ctaLogoOffset: 14,
-    tuneInFontSize: 18,
-    tuneInLockupOffset: 8
+    ctaLogoOffset: 20,
+    tuneInFontSize: 16,
+    tuneInLockupOffset: 12
   },
   yAlign: {
     type: Align.BOTTOM,
@@ -22,20 +22,20 @@ const {
   layoutXAligns: {
     leftXAlign: {
       type: Align.LEFT,
-      against: 70
+      against: 66
     },
     offCenterLeftXAlign: {
       type: Align.LEFT,
-      against: 200
+      against: 215
     },
     centerXAlign: Align.CENTER,
     offCenterRightXAlign: {
       type: Align.RIGHT,
-      offset: -205
+      offset: -220
     },
     rightXAlign: {
       type: Align.RIGHT,
-      offset: -80
+      offset: -77
     }
   }
 });

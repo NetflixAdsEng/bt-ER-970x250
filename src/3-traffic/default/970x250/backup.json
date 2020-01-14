@@ -53,7 +53,7 @@
     "bool.Toggle_Ribbon": {
       "type": "bool",
       "id": "Toggle_Ribbon",
-      "value": false
+      "value": true
     },
     "bool.Toggle_Supercut": {
       "type": "bool",

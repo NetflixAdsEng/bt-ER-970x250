@@ -1,5 +1,4 @@
 {
-  "name": "src",
   "build_size": "970x250",
   "build_source": {
     "build_source_path": "./c20-builder/c20-builder-970x250/"
@@ -7,10 +6,10 @@
   "build_source_options": {
     "stub_paths": []
   },
-  "output": "/Users/derek.miranda/Internal/c20/build-templates-PROD/bt-ER-970x250",
-  "filters": {},
-  "id": "Container 2.0 - 970x250",
-  "bsid": "d1b5c353-17c4-476e-bdca-31a2ba9d869c",
   "processing": false,
+  "id": "Container 2.0 - 970x250",
+  "name": "Container 2.0 - 970x250",
+  "output": "/Users/derek.miranda/Internal/build-source-assembler/build_sources_output",
+  "bsid": "d3139763-5486-494b-8241-0a6d58eaf602",
   "error": false
 }

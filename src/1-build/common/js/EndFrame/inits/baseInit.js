@@ -75,12 +75,17 @@ export default function baseInit(
   T.netflixLogo = document.createElement("netflix-brand-logo");
   T.netflixLogo.setAttribute("width", logoWidth);
 
+  function getCTALocale() {
+    return Monet.getComponentLocale("text.CTA");
+  }
+
   // cta
   T.cta = document.createElement("netflix-cta");
   T.cta.setAttribute("data-dynamic-key", "CTA");
   T.cta.setAttribute("arrow", "");
   T.cta.setAttribute("border", "");
   T.cta.setAttribute("width", ctaWidth);
+  T.cta.setAttribute("min-font-size", getCTALocale() === "th" ? 8 : 6);
   T.cta.setAttribute("max-width", isVerticalLockup ? ctaWidth : ctaMaxWidth);
   T.cta.setAttribute("height", ctaHeight);
 

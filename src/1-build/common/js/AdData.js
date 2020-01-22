@@ -19,19 +19,29 @@ export default function AdData() {
 		self.theImageName = ImageManager.addToLoad(adParams.imagesPath + 'sample.jpg');
 	 */
 
+  /*-- Red.Component.misc.start --*/
+
   self.fonts = {
+    /*-- Red.Component.fonts.start --*/
     primary: "template_font"
+
+    /*-- Red.Component.fonts.end --*/
   };
 
   self.colors = {
+    /*-- Red.Component.colors.start --*/
     white: "#F5F5F1",
     grey: "#221F1F",
     red: "#E50914",
     black: "#000000"
+    /*-- Red.Component.colors.end --*/
   };
 
   // Store svg markup for use in all UISvg instances, reduces duplicate code across builds.  See UISvg.
-  self.svg = {};
+  self.svg = {
+    /*-- Red.Component.svg.start --*/
+    /*-- Red.Component.svg.end --*/
+  };
 
   // if ribbon toggle not defined in treatment JSON, default to using ribbon
   const ribbonToggle = MonetUtils.getDataByKey("Toggle_Ribbon");
@@ -44,4 +54,6 @@ export default function AdData() {
 
   // indicates whether ad is on endframe state
   self.onEndFrame = false;
+
+  /*-- Red.Component.misc.end --*/
 }

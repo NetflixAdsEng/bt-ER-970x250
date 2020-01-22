@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <!-- BUILD SOURCE: Container 2.0 - 970x250 / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 3.6.3 / Created: 01/13/20 04:15pm -->
+  <!-- BUILD SOURCE: Container 2.0 - 970x250 / OPTIONS:  / @ff0000-ad-tech/build-source-assembler: 3.6.3 / Created: 01/22/20 03:35pm -->
 
   <head>
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta content="utf-8" http-equiv="encoding" />
     <meta name="ad.size" content="width=300,height=250" />
+    <!-- Red.Component.head_html_meta.start -->
     <!-- Red.Network.meta.start -->
     <!-- Red.Network.meta.end -->
+    <!-- Red.Component.head_html_meta.end -->
 
     <title>**CLIENT NAME** **PROJECT NAME** 970x250</title>
 
     <script type="text/javascript">
+      /*-- Red.Component.head_js_notes.start --*/
+      /*-- Red.Component.head_js_notes.end --*/
+
+      /*-- Red.Component.head_js_clicktag.start --*/
       /*-- Red.Network.clicktags.start --*/
       var clickTag = function() {
         Enabler.exit("clickTag");
@@ -38,6 +44,7 @@
       };
       // define more as needed
       /*-- Red.Network.clicktags.end --*/
+      /*-- Red.Component.head_js_clicktag.end --*/
 
       /* -- INDEX SETTINGS ---------------------------------------------------------------------------
        *
@@ -102,6 +109,7 @@
 
       function onImpression(binaryAssets) {
         console.log("Index.onImpression()");
+        /*-- Red.Component.body_js_on_impression.start --*/
         View.monetIntegrator.monetLoader.getInitialized().then(function(monet) {
           monet.logEvent("MONET_IMPRESSION", {
             type: adParams.netflixMonet.type,
@@ -110,6 +118,8 @@
         });
 
         Ad.launch(binaryAssets);
+
+        /*-- Red.Component.body_js_on_impression.end --*/
       }
 
       function isDevEnvironment() {
@@ -118,6 +128,8 @@
           window.location.href.match(/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+/)
         );
       }
+      /*-- Red.Component.head_js_misc.start --*/
+      /*-- Red.Component.head_js_misc.end --*/
     </script>
 
     <style type="text/css">
@@ -153,12 +165,14 @@
       }
     </style>
 
+    <!-- Red.Component.head_style_misc.start -->
     <style type="text/css">
       netflix-img,
       netflix-text {
         position: absolute;
       }
     </style>
+    <!-- Red.Component.head_style_misc.end -->
 
     <!-- Red.Network.script.start -->
     <script
@@ -181,6 +195,7 @@
       /*-- Red.Inject.promise_polyfill.start --*/
       /*-- Red.Inject.promise_polyfill.end --*/
 
+      /*-- Red.Component.body_js_misc.start --*/
       /*-- Red.Requester.monet_integrator.start --*/
       inject("../node_modules/@netflixadseng/wc-monet-integrator/package.json");
       /*-- Red.Requester.monet_integrator.end --*/
@@ -191,12 +206,16 @@
         "../node_modules/@netflixadseng/wc-netflix-preloader/package.json"
       );
       /*-- Red.Requester.netflix_preloader.end --*/
+      /*-- Red.Component.body_js_misc.end --*/
     </script>
 
+    <!-- Red.Component.body_html_inline_scripts.start -->
     <!-- preload inline scripts...if not needed until the build, use externalIncludes  -->
+    <!-- Red.Component.body_html_inline_scripts.end -->
 
     <script type="text/javascript">
       function useStatic() {
+        /*-- Red.Component.body_js_use_static.start --*/
         console.log("Index.useStatic()");
         removePreloader();
         document.getElementById("main").style.display = "none";
@@ -223,10 +242,13 @@
           adParams.adPath +
           assets.failover.images[0].source +
           "); background-size: contain; overflow: hidden; ";
+        /*-- Red.Component.body_js_use_static.end --*/
       }
       function failAd() {
+        /*-- Red.Component.body_js_fail_ad.start --*/
         console.log("Index.failAd()");
         useStatic();
+        /*-- Red.Component.body_js_fail_ad.end --*/
       }
     </script>
 
@@ -234,7 +256,10 @@
       var global = this;
       var View = {};
       var Network, queryParams, adData;
+      /*-- Red.Component.body_js_window_vars.start --*/
       var netflixPreloader;
+
+      /*-- Red.Component.body_js_window_vars.end --*/
 
       /* -- LAUNCH --------------------------------------------
        *
@@ -245,6 +270,7 @@
         console.log("Index.prepareIndex()");
         return new Promise(
           function(resolve) {
+            /*-- Red.Component.body_js_init.start --*/
             /*-- Red.Network.onload.start --*/
             resolve();
             /*-- Red.Network.onload.end --*/
@@ -263,6 +289,8 @@
             document.getElementById("preloader").appendChild(netflixPreloader);
             /*-- Red.Network.onload.start --*/
             /*-- Red.Network.onload.end --*/
+
+            /*-- Red.Component.body_js_init.end --*/
           },
           function(error) {
             global.failAd();
@@ -275,7 +303,9 @@
         console.log("Index.prepareAdParamsMisc()");
         return new Promise(
           function(resolve) {
+            /*-- Red.Component.body_js_prepare_ad_params_misc.start --*/
             resolve();
+            /*-- Red.Component.body_js_prepare_ad_params_misc.end --*/
           },
           function(error) {
             global.failAd();
@@ -288,7 +318,9 @@
         console.log("Index.preparePreloadMisc()");
         return new Promise(
           function(resolve) {
+            /*-- Red.Component.body_js_prepare_preload_misc.start --*/
             resolve();
+            /*-- Red.Component.body_js_prepare_preload_misc.end --*/
           },
           function(error) {
             global.failAd();
@@ -297,8 +329,9 @@
       }
       function removePreloader() {
         console.log("Index.removePreloader()");
+        /*-- Red.Component.body_js_remove_preloader.start --*/
         makeAuxClickable();
-
+        /*-- Red.Component.body_js_remove_preloader.end --*/
         var preloader = document.getElementById("preloader");
         if (preloader) {
           var aux = document.getElementById("aux");
@@ -311,6 +344,7 @@
       function prepareNetworkExit() {
         console.log("Index.prepareNetworkExit()");
         Network = new (function() {
+          /*-- Red.Component.body_js_network_exit.start --*/
           /*-- Red.Network.exit.start --*/
           this.exit = function(clickTag, url) {
             console.log("Network -> NETFLIX_MONET EXIT");
@@ -325,6 +359,7 @@
           };
           /*-- Red.Network.exit.end --*/
 
+          /*-- Red.Component.body_js_network_exit.end --*/
           this.appendMacro = function(_macro, _clickTag) {
             if (_macro.search(/^%%/) > -1) return _clickTag;
             else return _macro + _clickTag;
@@ -337,11 +372,15 @@
       }
       function handleAuxClick() {
         console.log("Index.handleAuxClick()");
+        /*-- Red.Component.body_js_network_exit_aux.start --*/
         /*-- Red.Network.exit_aux.start --*/
         Network.exit(clickTag);
         /*-- Red.Network.exit_aux.end --*/
+
+        /*-- Red.Component.body_js_network_exit_aux.end --*/
       }
 
+      /*-- Red.Component.body_js_misc_functions.start --*/
       function logMonetClick(targetId, event) {
         Monet.logEvent("CLICK", {
           src: targetId,
@@ -357,6 +396,8 @@
         View.monetIntegrator = document.createElement("monet-integrator");
         document.getElementById("main").appendChild(View.monetIntegrator);
       }
+
+      /*-- Red.Component.body_js_misc_functions.end --*/
 
       // ad-global bundle
       /*-- Red.Inject.ad-global.start --*/

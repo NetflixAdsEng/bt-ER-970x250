@@ -45,6 +45,13 @@ export function sideBySideBrandingLockup(
   // cta
   T.cta.resize();
 
+  // hotfix: prevent CTA copy container alignment for now
+  const ctaLocale = Monet.getComponentLocale("text.CTA");
+  if ((ctaLocale === "ar" || ctaLocale === "he") && T.cta.fontSize <= 8) {
+    const copyEl = T.cta.querySelector(".copy");
+    TweenLite.set(copyEl, { y: 0 });
+  }
+
   // switch typical CTA-logo orientation for RTL treatments
   const leftEl = adData.isRTL ? T.cta : T.netflixLogo;
   const rightEl = adData.isRTL ? T.netflixLogo : T.cta;

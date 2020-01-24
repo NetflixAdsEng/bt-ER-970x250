@@ -89,6 +89,10 @@ export default function baseInit(
   T.cta.setAttribute("max-width", isVerticalLockup ? ctaWidth : ctaMaxWidth);
   T.cta.setAttribute("height", ctaHeight);
 
+  if (adParams.adSize === "300x600") {
+    T.cta.setAttribute("horizontal-pad", 5);
+  }
+
   if (adData.isRTL) {
     T.cta.setAttribute("rtl", "");
   }

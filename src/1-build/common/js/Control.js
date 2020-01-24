@@ -8,22 +8,15 @@ import { MonetUtils } from "ad-utils";
 export class Control {
   static preMarkup() {
     console.log("Control.preMarkup()");
-    /*-- Red.Component.premarkup__content.start --*/
     View.netflixFonts = document.createElement("netflix-fonts");
     Markup.get("main").appendChild(View.netflixFonts);
-
-    /*-- Red.Component.premarkup__content.end --*/
   }
 
   static postMarkup() {
     console.log("Control.postMarkup()");
-    /*-- Red.Component.postmarkup__click.start --*/
     // listen for default exit
     Gesture.add(View.endFrame, GestureEvent.CLICK, Control.handleClick);
 
-    /*-- Red.Component.postmarkup__click.end --*/
-
-    /*-- Red.Component.postmarkup__content.start --*/
     View.endFrame.hide();
 
     Gesture.add(View.endFrame, GestureEvent.OVER, function() {
@@ -36,20 +29,11 @@ export class Control {
         View.endFrame.cta.mouseout();
       }
     });
-
-    /*-- Red.Component.postmarkup__content.end --*/
   }
 
-  /*-- Red.Component.class__content.start --*/
-
-  /*-- Red.Component.class__click.start --*/
   static handleClick(event) {
-    /*-- Red.Component.click_content.start --*/
-    /*-- Red.Component.click_content.end --*/
     Network.exit(overridePlatformExit, MonetUtils.getDataByKey("Exit_URL"));
   }
-
-  /*-- Red.Component.class__click.end --*/
 
   static handleMonetLoadComplete(element) {
     console.log("Control.handleMonetLoadComplete()");
@@ -57,7 +41,6 @@ export class Control {
       .then(data => {
         console.log("	-> All Netflix web components ready");
         // monet data is now assigned to MonetUtils
-        /*-- Red.Component.handleMonetLoadComplete_content.start --*/
         adData.hasFTM = MonetUtils.getDataByKey("FTM");
         adData.hasTuneIn = MonetUtils.getDataByKey("Tune_In");
 
@@ -70,9 +53,6 @@ export class Control {
         // adData.ratingsSrc = ImageManager.addToLoad(MonetUtils.getDataByKey('Ratings_Bug_20x20'), { forCanvas: false })
         //
 
-        /*-- Red.Component.handleMonetLoadComplete_extra.start --*/
-        /*-- Red.Component.handleMonetLoadComplete_extra.end --*/
-
         // proceed with ad AFTER the setData() Promise has been fulfilled
         ImageManager.load(function() {
           if (View.intro) View.intro.postMarkupStyling();
@@ -80,8 +60,6 @@ export class Control {
           Control.postMarkup();
           Animation.start();
         });
-
-        /*-- Red.Component.handleMonetLoadComplete_content.end --*/
       })
       .catch(err => {
         console.log(err);
@@ -90,9 +68,7 @@ export class Control {
   }
 
   static handleIntroVideoComplete(event) {
-    /*-- Red.Component.intro_complete.start --*/
     Animation.showEndFrame();
-    /*-- Red.Component.intro_complete.end --*/
   }
 
   static handleIntroClick(event) {
@@ -101,6 +77,4 @@ export class Control {
     View.intro.introVideoPlayer.pause();
     Control.handleClick();
   }
-
-  /*-- Red.Component.class__content.end --*/
 }

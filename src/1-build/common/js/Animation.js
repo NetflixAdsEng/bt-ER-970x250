@@ -2,19 +2,14 @@ import { Styles, Markup, Align, Effects } from "ad-view";
 import { Device } from "ad-external";
 
 export class Animation {
-  /*-- Red.Component.class.start --*/
   static start() {
     console.log("Animation.start()");
     // show the main container
-    /*-- Red.Component.init.start --*/
     TweenLite.delayedCall(0.1, () => {
       global.removePreloader();
     });
     TweenLite.set(View.main, { opacity: 1 });
 
-    /*-- Red.Component.init.end --*/
-
-    /*-- Red.Component.start_func.start --*/
     // netflix-ribbon animation at end of zoom always last this long
     const RIBBON_ANIM_TIME = 0.6;
 
@@ -69,15 +64,11 @@ export class Animation {
       }
       Animation.playIntro();
     }
-
-    /*-- Red.Component.start_func.end --*/
   }
 
   // IMPORTANT!!! Call this function when your animation is complete!
   static complete() {
     console.log("Animation.complete()");
-    /*-- Red.Component.complete.start --*/
-    /*-- Red.Component.complete.end --*/
   }
 
   static playIntro() {
@@ -111,7 +102,6 @@ export class Animation {
 
   static showEndFrame() {
     console.log("Animation.showEndFrame()");
-    /*-- Red.Component.showendframe_init.start --*/
     adData.onEndframe = true;
     if (adData.useSupercut) {
       // reset endframe after ribbon and supercut
@@ -121,8 +111,6 @@ export class Animation {
       }
       TweenLite.set([View.endFrame, View.endFrame.subLayer], { scale: 1 });
     }
-
-    /*-- Red.Component.showendframe_init.end --*/
 
     if (View.intro) View.intro.hide();
 
@@ -136,7 +124,6 @@ export class Animation {
 
     View.endFrame.show();
 
-    /*-- Red.Component.showendframe_content.start --*/
     const creative = new Creative();
     if (creative.init) {
       creative.init();
@@ -145,8 +132,6 @@ export class Animation {
     if (!adData.useRibbon || adData.useSupercut) {
       creative.play();
     }
-
-    /*-- Red.Component.showendframe_content.end --*/
   }
 
   static playCreative() {
@@ -154,6 +139,4 @@ export class Animation {
     const creative = new Creative();
     creative.play();
   }
-
-  /*-- Red.Component.class.end --*/
 }

@@ -18,12 +18,8 @@ export class Preflight {
       let promises = [
         // this.loadDynamicJS('define-your-case-id')
       ];
-      /*-- Red.Component.init.start --*/
       promises.push(this.loadCreativeJs());
 
-      /*-- Red.Component.init.end --*/
-
-      /*-- Red.Component.promises.start --*/
       // ensuring backup.json/Monet data available before rest of preflight actions
       MonetUtils.setData(View.monetIntegrator)
         .then(this.prepareAdData)
@@ -38,11 +34,8 @@ export class Preflight {
         .catch(err => {
           reject(err);
         });
-
-      /*-- Red.Component.promises.end --*/
     });
   }
-  /*-- Red.Component.misc_functions.start --*/
   static loadCreativeJs() {
     console.log("Preflight.loadCreativeJs()");
     return new Promise((resolve, reject) => {
@@ -65,8 +58,6 @@ export class Preflight {
     return Promise.resolve();
   }
 
-  /*-- Red.Component.misc_functions.end --*/
-
   static addPreloadedImages() {
     console.log("Preflight.addPreloadedImages()");
     ImageManager.addToDictionary(assets.preloadedImages);
@@ -74,8 +65,6 @@ export class Preflight {
 
   static prepareAdData() {
     console.log("Preflight.prepareAdData()");
-    /*-- Red.Component.prepare_ad_data.start --*/
-    /*-- Red.Component.prepare_ad_data.end --*/
 
     global.adData = new AdData();
   }

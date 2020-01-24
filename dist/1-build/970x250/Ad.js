@@ -26,18 +26,14 @@ export class Ad {
 
   static prepare() {
     console.log("Ad.prepare()");
-    /*-- Red.Component.ad_prepare__premarkup.start --*/
     Control.preMarkup();
-    /*-- Red.Component.ad_prepare__premarkup.end --*/
 
-    /*-- Red.Component.ad_prepare__view.start --*/
     View.main = new Main();
     if (adData.useSupercut && Device.type === "desktop") {
       View.intro = new Intro({ target: View.main });
     }
 
     View.endFrame = new EndFrame({
-      /*-- Red.Insert.endframe_args --*/
       target: View.main,
       layout: window.Creative && Creative.layout
     });
@@ -60,9 +56,6 @@ export class Ad {
 
     View.mainBorder = new MainBorder();
 
-    /*-- Red.Component.ad_prepare__view.end --*/
-
-    /*-- Red.Component.ad_prepare__postmarkup.start --*/
     if (View.monetIntegrator.hasAttribute("ready")) {
       Control.handleMonetLoadComplete(View.monetIntegrator);
     } else {
@@ -70,14 +63,6 @@ export class Ad {
         Control.handleMonetLoadComplete(View.monetIntegrator);
       });
     }
-
-    /*-- Red.Component.ad_prepare__postmarkup.end --*/
-
-    /*-- Red.Component.ad_prepare__animation.start --*/
-    /*-- Red.Component.ad_prepare__animation.end --*/
   }
-
-  /*-- Red.Component.ad_class__content.start --*/
-  /*-- Red.Component.ad_class__content.end --*/
 }
 window.Ad = Ad;

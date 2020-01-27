@@ -79,13 +79,24 @@ export default function baseInit(
     return Monet.getComponentLocale("text.CTA");
   }
 
+  function getMinFontSize() {
+    switch (getCTALocale()) {
+      case "th":
+        return 8;
+      case "id":
+        return 7;
+      default:
+        return 6;
+    }
+  }
+
   // cta
   T.cta = document.createElement("netflix-cta");
   T.cta.setAttribute("data-dynamic-key", "CTA");
   T.cta.setAttribute("arrow", "");
   T.cta.setAttribute("border", "");
   T.cta.setAttribute("width", ctaWidth);
-  T.cta.setAttribute("min-font-size", getCTALocale() === "th" ? 8 : 6);
+  T.cta.setAttribute("min-font-size", getMinFontSize());
   T.cta.setAttribute("max-width", isVerticalLockup ? ctaWidth : ctaMaxWidth);
   T.cta.setAttribute("height", ctaHeight);
 

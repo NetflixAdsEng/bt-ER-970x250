@@ -45,12 +45,7 @@ export function sideBySideBrandingLockup(
   // cta
   T.cta.resize();
 
-  // hotfix: prevent CTA copy container alignment for now
-  const ctaLocale = Monet.getComponentLocale("text.CTA");
-  if (ctaLocale === "ar" || ctaLocale === "he") {
-    const copyEl = T.cta.querySelector(".copy");
-    TweenLite.set(copyEl, { y: ctaLocale === "he" ? 0 : -1 });
-  }
+  ctaHotFix(T.cta);
 
   // switch typical CTA-logo orientation for RTL treatments
   const leftEl = adData.isRTL ? T.cta : T.netflixLogo;
@@ -114,12 +109,7 @@ export function stackedBrandingLockup(
   // positioning CTA atop logo
   T.cta.resize();
 
-  // hotfix: prevent CTA copy container alignment for now
-  const ctaLocale = Monet.getComponentLocale("text.CTA");
-  if (ctaLocale === "ar" || ctaLocale === "he") {
-    const copyEl = T.cta.querySelector(".copy");
-    TweenLite.set(copyEl, { y: 0 });
-  }
+  ctaHotFix(T.cta);
 
   // switch typical CTA-logo orientation for RTL treatments
   const topEl = adData.isRTL ? T.netflixLogo : T.cta;
@@ -166,4 +156,19 @@ export function stackedBrandingLockup(
     children,
     align: brandingLockupAlign
   });
+}
+
+const vertHotFixes = {
+  ar: -1,
+  he: 0,
+  th: 1
+};
+
+function ctaHotFix(cta) {
+  // hotfix: prevent CTA copy container alignment for now
+  const ctaLocale = Monet.getComponentLocale("text.CTA");
+  if (vertHotFixes[ctaLocale] !== undefined) {
+    const copyEl = cta.querySelector(".copy");
+    TweenLite.set(copyEl, { y: vertHotFixes[ctaLocale] });
+  }
 }

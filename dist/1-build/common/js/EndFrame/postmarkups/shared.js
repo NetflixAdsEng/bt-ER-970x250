@@ -49,7 +49,7 @@ export function sideBySideBrandingLockup(
   const ctaLocale = Monet.getComponentLocale("text.CTA");
   if (ctaLocale === "ar" || ctaLocale === "he") {
     const copyEl = T.cta.querySelector(".copy");
-    TweenLite.set(copyEl, { y: 0 });
+    TweenLite.set(copyEl, { y: ctaLocale === "he" ? 0 : -1 });
   }
 
   // switch typical CTA-logo orientation for RTL treatments

@@ -75,15 +75,14 @@ export default function baseInit(
   T.netflixLogo = document.createElement("netflix-brand-logo");
   T.netflixLogo.setAttribute("width", logoWidth);
 
-  function getCTALocale() {
-    return Monet.getComponentLocale("text.CTA");
-  }
+  const ctaLocale = Monet.getComponentLocale("text.CTA");
 
   function getMinFontSize() {
-    switch (getCTALocale()) {
+    switch (ctaLocale) {
       case "th":
         return 8;
       case "id":
+      case "ar":
         return 7;
       default:
         return 6;

@@ -103,6 +103,13 @@ export default function baseInit(
     T.cta.setAttribute("horizontal-pad", 5);
   }
 
+  if (ctaLocale === "ar") {
+    T.cta.style.lineHeight = 1.2;
+    if (window.Creative && Creative.layout === "STACKED") {
+      T.cta.setAttribute("vertical-pad", 1);
+    }
+  }
+
   if (adData.isRTL) {
     T.cta.setAttribute("rtl", "");
   }

@@ -159,7 +159,7 @@ export function stackedBrandingLockup(
 }
 
 const vertHotFixes = {
-  ar: -1,
+  ar: 0,
   he: 0,
   th: 1
 };

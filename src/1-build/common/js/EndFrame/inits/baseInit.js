@@ -110,6 +110,11 @@ export default function baseInit(
     }
   }
 
+  if (ctaLocale === "he") {
+    T.cta.style.lineHeight = 1;
+    T.cta.setAttribute("vertical-pad", 2);
+  }
+
   if (adData.isRTL) {
     T.cta.setAttribute("rtl", "");
   }

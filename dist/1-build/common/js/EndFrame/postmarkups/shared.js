@@ -158,13 +158,13 @@ export function stackedBrandingLockup(
   });
 }
 
-const vertHotFixes = {
-  ar: 0,
-  he: 0,
-  th: 1
-};
-
 function ctaHotFix(cta) {
+  const vertHotFixes = {
+    ar: 0,
+    he: window.Creative && Creative.layout === "STACKED" ? 1 : 0,
+    th: 1
+  };
+
   // hotfix: prevent CTA copy container alignment for now
   const ctaLocale = Monet.getComponentLocale("text.CTA");
   if (vertHotFixes[ctaLocale] !== undefined) {

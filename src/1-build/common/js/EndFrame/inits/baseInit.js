@@ -105,9 +105,7 @@ export default function baseInit(
 
   if (ctaLocale === "ar") {
     T.cta.style.lineHeight = 1.2;
-    if (window.Creative && Creative.layout === "STACKED") {
-      T.cta.setAttribute("vertical-pad", 1);
-    }
+    T.cta.setAttribute("vertical-pad", 1);
   }
 
   if (ctaLocale === "he") {

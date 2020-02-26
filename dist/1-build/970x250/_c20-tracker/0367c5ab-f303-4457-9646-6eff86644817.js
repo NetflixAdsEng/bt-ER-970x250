@@ -1,6 +1,6 @@
 // GENERIC SOURCE TRACKER: bt-Endframe-Resolve
-if (typeof module === "undefined") {
-  module = {};
+if (typeof module === 'undefined') {
+	module = {}
 }
 // prettier-ignore
 module.exports = {
@@ -19,12 +19,13 @@ module.exports = {
       "SIDE_BY_SIDE_CENTER": "Side-By-Side Center",
       "SIDE_BY_SIDE_OFF_CENTER_RIGHT": "Side-By-Side Off-Center Right",
       "SIDE_BY_SIDE_RIGHT": "Side-By-Side Right",
+      "CORNER_RIGHT": "Corner Right",
       "STACKED": "Stacked"
     }
   },
   "context": "RED Interactive",
   "state": "published",
-  "updated": 1582582537879,
+  "updated": 1582679710308,
   "username": "GitHub",
   "full_name": "NetflixDev/bt-ER-970x250",
   "html_url": "https://github.com/NetflixDev/bt-ER-970x250",

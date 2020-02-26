@@ -42,12 +42,13 @@
         "SIDE_BY_SIDE_CENTER": "Side-By-Side Center",
         "SIDE_BY_SIDE_OFF_CENTER_RIGHT": "Side-By-Side Off-Center Right",
         "SIDE_BY_SIDE_RIGHT": "Side-By-Side Right",
+        "CORNER_RIGHT": "Corner Right",
         "STACKED": "Stacked"
       }
     },
     "context": "RED Interactive",
     "state": "published",
-    "updated": 1582582539132,
+    "updated": 1582679723814,
     "username": "GitHub",
     "full_name": "NetflixDev/bt-ER-970x250",
     "html_url": "https://github.com/NetflixDev/bt-ER-970x250",

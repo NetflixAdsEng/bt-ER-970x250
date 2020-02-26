@@ -66,6 +66,11 @@
       "url": "https://ae.nflximg.net/assets/prod/94b3e9ce-a957-427e-bbf9-e11566afd288/20170725/049fa184-98ab-41dc-89d2-726aa179d210.mp4",
       "videoType": "SUPERCUT"
     },
+    "bool.Toggle_Supercut_Logo": {
+      "type": "bool",
+      "id": "Toggle_Supercut_Logo",
+      "value": true
+    },
     "bool.Toggle_Right-To-Left_Language": {
       "type": "bool",
       "id": "Toggle_Right-To-Left_Language",

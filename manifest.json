@@ -54,6 +54,12 @@
         "toolTip": "Temporary supercut URL. Actual supercut will be uploaded in setting up treatment in Monet. Please upload only .mp4 videos under 1 MB."
       }
     },
+    "Toggle_Supercut_Logo": {
+      "input": {
+        "state": "optional",
+        "toolTip": "Toggles the Netflix logo animation during the supercut"
+      }
+    },
     "FTM": {
       "input": {
         "state": "disabled"

@@ -60,6 +60,12 @@
         "toolTip": "Toggles the Netflix logo animation during the supercut"
       }
     },
+    "Toggle_Upper_Right_Ratings": {
+      "input": {
+        "state": "optional",
+        "toolTip": "If true, ratings bug will appear at upper-right corner of container. Otherwise, it will appear at the bottom-right."
+      }
+    },
     "FTM": {
       "input": {
         "state": "disabled"

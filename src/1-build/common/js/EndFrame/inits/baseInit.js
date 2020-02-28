@@ -71,7 +71,6 @@ export default function baseInit(T, { logoWidth = 110, ctaWidth = 107, ctaMaxWid
 			case 'ar':
 			case 'fr':
 			case 'de':
-			case 'cs':
 			case 'no':
 			case 'nl':
 				return 7

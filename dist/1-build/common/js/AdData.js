@@ -40,6 +40,7 @@ export default function AdData() {
 	self.useSupercutLogo = supercutLogoToggle === false ? false : true
 
 	self.useSupercut = MonetUtils.getDataByKey('Toggle_Supercut')
+	self.useUpperRightRatings = MonetUtils.getDataByKey('Toggle_Upper_Right_Ratings')
 	self.isRTL = MonetUtils.getDataByKey('Toggle_Right-To-Left_Language')
 	self.hasTT = !!MonetUtils.getDataByKey('Title_Treatment')
 	self.retinaTT = !!MonetUtils.getDataByKey('Double_Density_Title_Treatment')

@@ -54,18 +54,34 @@ export default function baseInit(T, { logoWidth = 110, ctaWidth = 107, ctaMaxWid
 	T.netflixLogo = document.createElement('netflix-brand-logo')
 	T.netflixLogo.setAttribute('width', logoWidth)
 
-	const ctaLocale = Monet.getComponentLocale('text.CTA')
+	let ctaLocale = Monet.getComponentLocale('text.CTA')
+	ctaLocale = ctaLocale && ctaLocale.substring(0, 2)
 
 	function getMinFontSize() {
+		if (ctaLocale === 'ar' && Creative && Creative.layout === 'CORNER_RIGHT') {
+			return 8
+		}
+
 		switch (ctaLocale) {
+			case 'he':
 			case 'th':
+			case 'ja':
 				return 8
 			case 'id':
 			case 'ar':
+			case 'fr':
+			case 'de':
+			case 'cs':
+			case 'no':
+			case 'nl':
 				return 7
 			default:
 				return 6
 		}
+	}
+
+	function getCtaHeight() {
+		return ctaHeight
 	}
 
 	// cta
@@ -76,15 +92,21 @@ export default function baseInit(T, { logoWidth = 110, ctaWidth = 107, ctaMaxWid
 	T.cta.setAttribute('width', ctaWidth)
 	T.cta.setAttribute('min-font-size', getMinFontSize())
 	T.cta.setAttribute('max-width', isVerticalLockup ? ctaWidth : ctaMaxWidth)
-	T.cta.setAttribute('height', ctaHeight)
+	T.cta.setAttribute('height', getCtaHeight())
 
 	if (adParams.adSize === '300x600') {
 		T.cta.setAttribute('horizontal-pad', 5)
 	}
 
-	if (ctaLocale === 'ar') {
+	if (ctaLocale === 'ar' || ctaLocale === 'ja' || ctaLocale === 'he' || ctaLocale === 'ko') {
 		T.cta.style.lineHeight = 1.2
-		T.cta.setAttribute('vertical-pad', 1)
+		if (ctaLocale === 'ko') {
+			T.cta.setAttribute('vertical-pad', 0.5)
+		} else if (ctaLocale === 'ar') {
+			T.cta.setAttribute('vertical-pad', 0)
+		} else {
+			T.cta.setAttribute('vertical-pad', 1)
+		}
 	}
 
 	if (ctaLocale === 'he') {

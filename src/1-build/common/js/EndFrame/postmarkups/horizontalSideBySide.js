@@ -79,16 +79,30 @@ export default function horizontalSideBySide({
 
 	// ratings bug
 	if (adData.hasRatings) {
-		Align.set(T.ratingsBug, {
-			x: {
-				type: Align.RIGHT,
-				offset: -5
-			},
-			y: {
-				type: Align.BOTTOM,
-				offset: -5
-			}
-		})
+		Align.set(
+			T.ratingsBug,
+			adData.useUpperRightRatings
+				? {
+						x: {
+							type: Align.RIGHT,
+							offset: -20
+						},
+						y: {
+							type: Align.TOP,
+							offset: 10
+						}
+				  }
+				: {
+						x: {
+							type: Align.RIGHT,
+							offset: -5
+						},
+						y: {
+							type: Align.BOTTOM,
+							offset: -5
+						}
+				  }
+		)
 	} else {
 		T.removeChild(T.ratingsBug)
 	}

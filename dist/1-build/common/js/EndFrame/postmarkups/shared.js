@@ -157,7 +157,8 @@ function ctaHotFix(cta) {
 	}
 
 	// hotfix: prevent CTA copy container alignment for now
-	const ctaLocale = Monet.getComponentLocale('text.CTA')
+	let ctaLocale = Monet.getComponentLocale('text.CTA')
+	ctaLocale = ctaLocale && ctaLocale.substring(0, 2)
 	if (vertHotFixes[ctaLocale] !== undefined) {
 		const copyEl = cta.querySelector('.copy')
 		TweenLite.set(copyEl, { y: vertHotFixes[ctaLocale] })

@@ -93,7 +93,7 @@ export default function baseInit(T, { logoWidth = 110, ctaWidth = 107, ctaMaxWid
 	T.cta.setAttribute('max-width', isVerticalLockup ? ctaWidth : ctaMaxWidth)
 	T.cta.setAttribute('height', getCtaHeight())
 
-	if (adParams.adSize === '300x600') {
+	if (adParams.adSize === '300x600' && window.Creative && (!Creative.layout || Creative.layout.indexOf('CORNER') === -1)) {
 		T.cta.setAttribute('horizontal-pad', 5)
 	}
 

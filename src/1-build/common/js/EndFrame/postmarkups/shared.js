@@ -163,4 +163,16 @@ function ctaHotFix(cta) {
 		const copyEl = cta.querySelector('.copy')
 		TweenLite.set(copyEl, { y: vertHotFixes[ctaLocale] })
 	}
+
+	// fix arrow size
+	if (adParams.adSize === '970x250' && (ctaLocale === 'ar' || ctaLocale === 'he')) {
+		var svg = cta.arrow.querySelector('svg')
+		var path = svg.querySelector('path')
+
+		TweenMax.set(cta.arrow, {
+			height: 5
+		})
+		svg.setAttribute('height', '6px')
+		path.setAttribute('d', 'M0,0 l2.5,2.5l-2.5,2.5')
+	}
 }

@@ -34,7 +34,7 @@
     "@netflixadseng/pk-component-utils": "^4.0.0",
     "@netflixadseng/wc-netflix-preloader": "^5.0.0",
     "@netflixadseng/wc-netflix-cta": "^6.3.0",
-    "@netflixadseng/wc-monet-integrator": "^6.0.0",
+    "@netflixadseng/wc-monet-integrator": "git+ssh://github.com/NetflixAdsEng/wc-monet-integrator.git#fix/no-unpkg",
     "@netflixadseng/wc-netflix-video": "^5.0.0",
     "@netflixadseng/wc-netflix-flushed-ribbon": "^5.0.0",
     "@netflixadseng/wc-netflix-brand-logo": "^5.0.0",

@@ -165,7 +165,7 @@ function ctaHotFix(cta) {
 	}
 
 	// fix arrow size
-	if (adParams.adSize === '970x250' && (ctaLocale === 'ar' || ctaLocale === 'he')) {
+	if (ctaLocale === 'ar' || ctaLocale === 'he') {
 		var svg = cta.arrow.querySelector('svg')
 		var path = svg.querySelector('path')
 
